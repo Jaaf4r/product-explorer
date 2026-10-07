@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Browse, filter, sort, and save your favorite products." />
+	<title>Product Explorer</title>
+</head>
+
+<body>
+	<main class="app-shell">
+		<header class="page-header">
+			<p class="eyebrow">Curated essentials</p>
+			<h1>Product Explorer</h1>
+			<p class="intro">
+				Browse the collection, narrow the results, and save the products
+				you love.
+			</p>
+		</header>
+
+		<section class="filter-panel" aria-labelledby="filter-heading">
+			<div class="panel-heading">
+				<h2 id="filter-heading">Find your next favorite</h2>
+				<p>Search by name or refine the collection using the filters.</p>
+			</div>
+
+			<div class="filter-grid">
+				<div class="field search-field">
+					<label for="search-input">Search products</label>
+					<input type="search" id="search-input" placeholder="Try “keyboard”" autocomplete="off" />
+				</div>
+
+				<div class="field">
+					<label for="category-filter">Category</label>
+					<select name="category-filter" id="category-filter">
+						<option value="all">All categories</option>
+						<option value="electronics">Electronics</option>
+						<option value="books">Books</option>
+						<option value="clothing">Clothing</option>
+					</select>
+				</div>
+
+				<div class="field">
+					<label for="sort-order">Sort by</label>
+					<select id="sort-order">
+						<option value="default">Default</option>
+						<option value="price-asc">Price: low to high</option>
+						<option value="price-desc">Price: high to low</option>
+						<option value="name">Name</option>
+					</select>
+				</div>
+
+				<label class="favorites-toggle">
+					<input id="favorites-only" type="checkbox" />
+					<span>Favorites only</span>
+				</label>
+			</div>
+		</section>
+
+		<div class="results-header">
+			<h2>Products</h2>
+			<p id="result-count" aria-live="polite"></p>
+		</div>
+
+		<section id="product-list" class="product-grid" aria-label="Product results"></section>
+	</main>
+
+	<script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
